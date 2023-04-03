@@ -26,16 +26,3 @@ npm run dev
 npx create-next-app nextjs-blog --use-npm --example "https://github.com/vercel/next-learn/tree/master/basics/learn-starter"
 npm run dev
 ```
-
-5. nodejs
-```
-npm i -g vercel
-vercel dev
-```
-
-6. cloudbase
-```
-# tencent cloudbase serverless
-npm run dev
-npm run deploy
-```

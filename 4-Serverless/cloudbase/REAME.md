@@ -1,5 +1,12 @@
 # Cloudbase
 
+## tencent cloudbase serverless 命令
+```
+npm run dev
+npm run deploy
+```
+
+## 相关依赖
 ```
 # 开发时热部署
 node-dev
