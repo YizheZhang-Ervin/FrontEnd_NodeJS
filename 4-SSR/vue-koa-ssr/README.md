@@ -1,4 +1,4 @@
-# Vue-SSR-KOA
+# Vue-KOA-SSR
 
 1. 依赖 & 建项目
 ```

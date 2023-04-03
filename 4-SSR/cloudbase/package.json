@@ -1,0 +1,22 @@
+{
+  "name": "tcb",
+  "version": "0.1.0",
+  "description": "test",
+  "keywords": [
+    "tcb"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "new": "plop",
+    "dev": "node-dev -r dotenv/config bin/www",
+    "lint": "standard --fix",
+    "deploy": "tcb fn deploy"
+  },
+  "devDependencies": {
+    "@cloudbase/cli": "1.12.0",
+    "dotenv": "16.0.0",
+    "node-dev": "7.1.0",
+    "plop": "3.0.5",
+    "standard": "16.0.4"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "$schema": "https://framework-1258016615.tcloudbaseapp.com/schema/latest.json",
+  "envId": "env-xx",
+  "version": "2.0",
+  "functionRoot": "./functions",
+  "functions": [
+    {
+      "name": "short",
+      "timeout": 5,
+      "envVariables": {
+        "ENV_ID": "env-xx"
+      },
+      "runtime": "Nodejs10.15",
+      "memorySize": 128,
+      "handler": "index.main"
+    },
+    {
+      "name": "qrcode",
+      "timeout": 5,
+      "envVariables": {},
+      "runtime": "Nodejs10.15",
+      "memorySize": 64,
+      "handler": "index.main"
+    },
+    {
+      "name": "face",
+      "timeout": 5,
+      "envVariables": {},
+      "runtime": "Nodejs10.15",
+      "memorySize": 128,
+      "handler": "index.main"
+    },
+    {
+      "name": "cors",
+      "timeout": 5,
+      "envVariables": {},
+      "runtime": "Nodejs10.15",
+      "memorySize": 128,
+      "handler": "index.main"
+    }
+  ],
+  "framework": {
+    "name": "ez",
+    "plugins": {
+      "function": {
+        "use": "@cloudbase/framework-plugin-function",
+        "inputs": {}
+      }
+    }
+  }
+}

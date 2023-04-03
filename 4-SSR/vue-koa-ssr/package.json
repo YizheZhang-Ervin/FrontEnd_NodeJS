@@ -1,5 +1,5 @@
 {
-  "name": "vue-ssr-koa",
+  "name": "vue-koa-ssr",
   "version": "0.1.0",
   "private": true,
   "scripts": {
