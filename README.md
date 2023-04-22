@@ -1,5 +1,10 @@
-# FrontEnd Implement  
-- 前端特征/前端工具/NodeJS/手写框架/前后端框架  
+# FrontEnd Implementation
+0. 工具&特征
+1. NodeJS
+2. 手写框架
+3. 前后端框架
+4. Serverless & SSR
+5. WebSSH
 
 ## 0-Frontend Tools  
 - 函数
@@ -34,15 +39,12 @@
 - WorkerThread
   
 ## 2-Vue Framework (MVVM Frontend)
-- Run  
-  - index.html  
+- Run (index.html)
   
 ## 2-Express Framework (NodeJS Backend)  
 - 模板页面动态渲染{{}}及{%for%}  
 - 正则路由  
-- Run  
-    - cd 3-Express Framework  
-    - node app.js  
+- Run (node app.js) 
   
 ## 3-Frameworks
 - Angular

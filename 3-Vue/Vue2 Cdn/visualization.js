@@ -1,23 +1,17 @@
-Vue.component('Visualization', {
+Vue.component('visualization', {
     props: {
-        msg: String
+        msg: Boolean
     },
-    // 动态props
     watch: {
         msg: function (newVal) {
-            if (newVal == "visualization") {
-                this.display = true; //newVal即是msg
-                this.get();
-            }
+            this.display = newVal //newVal即是msg
+            newVal ? this.get() : null
         },
     },
     mounted() {
-        if (this.msg == "visualization") {
-            this.display = true;
-            this.get();
-        }
+        this.display ? this.get() : null
     },
-    data() {
+    data: function () {
         return {
             display: false,
             allData: ""
@@ -36,6 +30,10 @@ Vue.component('Visualization', {
                 },
                 (err) => {
                     console.log("frontend error", err);
+                    this.allData = [
+                        ['2013/1/24', 2320.26, 2320.26, 2287.3, 2362.94, 86160000],
+                        ['2013/1/25', 2300, 2291.3, 2288.26, 2308.38, 79330000]];
+                    this.plot();
                 }
             );
         },
@@ -45,9 +43,6 @@ Vue.component('Visualization', {
             myChart.setOption(option);
         },
         getData() {
-            // var all = [
-            //     ['2013/1/24', 2320.26, 2320.26, 2287.3, 2362.94,86160000],
-            //     ['2013/1/25', 2300, 2291.3, 2288.26, 2308.38,79330000]];
             var all = this.allData;
             var price = [];
             var date = [];
@@ -352,7 +347,6 @@ Vue.component('Visualization', {
             };
             return option;
         },
-
     },
     template:
         `
