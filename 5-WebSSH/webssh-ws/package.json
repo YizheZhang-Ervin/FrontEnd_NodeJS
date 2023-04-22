@@ -1,0 +1,16 @@
+{
+  "name": "webssh-ws",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ervin",
+  "license": "MIT",
+  "dependencies": {
+    "ssh2": "^1.11.0",
+    "utf8": "^3.0.0",
+    "ws": "^8.13.0"
+  }
+}
