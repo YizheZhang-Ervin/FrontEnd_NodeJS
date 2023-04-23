@@ -28,7 +28,14 @@ export default {
       const term = new Terminal({
         cursorBlink: true, // 关标闪烁
         cursorStyle: 'underline', // 光标样式 'block' | 'underline' | 'bar'
-        scrollback: 100 // 当行的滚动超过初始值时保留的行视窗，越大回滚能看的内容越多，
+        scrollback: 100, // 当行的滚动超过初始值时保留的行视窗，越大回滚能看的内容越多，
+        theme: {
+          foreground: '#F8F8F8',
+          background: '#2D2E2C',
+          cursor: 'help', //设置光标
+          lineHeight: 16
+        },
+        fontFamily: '"Cascadia Code", Menlo, monospace'
       })
       this.term = term
       const fitAddon = new FitAddon()
@@ -90,8 +97,14 @@ export default {
 }
 </script>
   
-  <style scoped>
+<style>
 #xterm {
   height: 100vh;
+  width: 50vw;
+  display: contents;
+}
+
+#xterm .xterm-viewport {
+  overflow-y: hidden !important;
 }
 </style>

@@ -70,5 +70,6 @@
 - vue-express-nuxt
 - react-nextjs
 
-## 5-WebSSH
-- xterm & ssh2 & websocket
+## 5-WebSSH (xterm & ssh2 & websocket)
+- webssh-vue & webssh-ws
+- webssh-vue-koa-ws

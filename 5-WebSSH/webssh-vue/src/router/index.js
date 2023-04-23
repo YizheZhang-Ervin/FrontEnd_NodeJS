@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import WebShell from '../views/WebShell.vue'
+import WebShell from '@/views/WebShell.vue'
+import Home from '@/views/Home.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -8,6 +9,11 @@ const router = createRouter({
       path: '/',
       name: 'WebShell',
       component: WebShell
+    },
+    {
+      path: "/home",
+      name: "Home",
+      component: Home
     }
   ]
 })
