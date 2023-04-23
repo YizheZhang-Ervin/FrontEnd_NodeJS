@@ -36,4 +36,6 @@
     - npm install utf8 ssh2 ws
     - npm install koa koa-router static-resource-plugin koa-html-render
   - 运行
+    - websocket端口：2000
+    - koa端口：3000
     - node app.js
