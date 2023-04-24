@@ -17,7 +17,7 @@
   - 运行
     - cd webssh-vue
     - npm install
-    - npm run dev 或 npm run build (打包后直接打开index.html)
+    - npm run dev 或 npm run build (打包后后端渲染)
 - 【webssh-ws】
   - 依赖
     - npm install utf8

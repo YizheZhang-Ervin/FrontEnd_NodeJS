@@ -1,0 +1,39 @@
+{
+  "name": "koa-webpack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node src/index.js",
+    "webpack:debug": "node --inspect-brk ./node_modules/.bin/webpack --config config/webpack.config.prod.js --progress",
+    "watch": "cross-env NODE_ENV=development webpack --watch --config config/webpack.config.dev.js --progress",
+    "debug": "nodemon --inspect dist/server.bundle.js",
+    "start:dist": "npm-run-all -p watch debug",
+    "build": "cross-env NODE_ENV=production ./node_modules/.bin/webpack --config config/webpack.config.prod.js --progress",
+    "dev": "./node_modules/.bin/nodemon src/index.js",
+    "prd": "cross-env PORT=9001 pm2 start src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ervin",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.21.4",
+    "@babel/node": "^7.20.7",
+    "@babel/preset-env": "^7.21.4",
+    "babel-loader": "^9.1.2",
+    "clean-webpack-plugin": "^4.0.0",
+    "cross-env": "^7.0.3",
+    "nodemon": "^2.0.22",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^5.0.0",
+    "terser-webpack-plugin": "^4.2.3",
+    "webpack": "^5.80.0",
+    "webpack-cli": "^5.0.2",
+    "webpack-merge": "^5.8.0",
+    "webpack-node-externals": "^3.0.0"
+  },
+  "dependencies": {
+    "@babel/plugin-transform-runtime": "^7.21.4",
+    "koa": "^2.14.2"
+  }
+}
