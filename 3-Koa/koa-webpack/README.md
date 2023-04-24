@@ -19,6 +19,7 @@ npm i koa
 2. Build
 ```
 webpack.config.base.js里externals: [nodeExternals()]决定是否依赖也打包
+raw-loader用于webpack解析.node文件
 ```
 
 3. Run

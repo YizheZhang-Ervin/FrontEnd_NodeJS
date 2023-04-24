@@ -29,6 +29,10 @@ const webpackConfig = {
                 // 尽量将 loader 应用于最少数量的必要模块，因此设置include
                 // 只针对该目录下的js文件进行babel处理
                 // include: path.join(__dirname, '../')
+            },
+            {
+                test: /\.node$/i,
+                use: 'raw-loader',
             }
         ]
     },
