@@ -54,7 +54,8 @@
 - Koa
 
 ## 4-Electron
-- 多平台桌面应用
+- electron多平台桌面应用
+- electron-vue
 
 ## 4-Serverless
 - 自定义运行时
