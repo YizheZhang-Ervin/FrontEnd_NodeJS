@@ -1,0 +1,47 @@
+{
+    "name": "demo",
+    "productName": "demo name",
+    "author": "ervin",
+    "version": "1.0.0",
+    "main": "main.js",
+    "description": "demo desc",
+    "scripts": {
+        "start": "electron .",
+        "pack": "electron-builder --dir",
+        "dist": "electron-builder"
+    },
+    "build": {
+        "electronVersion": "1.8.4",
+        "win": {
+            "requestedExecutionLevel": "highestAvailable",
+            "target": [
+                {
+                    "target": "nsis",
+                    "arch": [
+                        "x64"
+                    ]
+                }
+            ]
+        },
+        "appId": "demoId",
+        "artifactName": "demo-${version}-${arch}.${ext}",
+        "nsis": {
+            "artifactName": "demo-${version}-${arch}.${ext}"
+        },
+        "extraResources": [
+            {
+                "from": "./static/",
+                "to": "app-server",
+                "filter": [
+                    "**/*"
+                ]
+            }
+        ]
+    },
+    "devDependencies": {
+        "electron": "^27.0.3",
+        "electron-builder": "^24.6.4",
+        "electron-packager": "^17.1.2",
+        "electron-updater": "^6.1.4"
+    }
+}
