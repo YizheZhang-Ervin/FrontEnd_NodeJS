@@ -3,7 +3,7 @@
 ## 使用
 ```
 bin: 启动入口
-dist: vue打包存放目录
+static: vue打包存放目录
 node_modules: 依赖目录
 src: 代码目录
 ```

@@ -29,9 +29,9 @@ app.use(bodyparser({
 app.use(json())
 app.use(logger())
 
-let parentDir = path.resolve(__dirname,"..")
-app.use(static(parentDir + '/dist'))
-app.use(views(parentDir + '/dist', { extension: "html" }))
+let parentDir = path.resolve(__dirname, "..")
+app.use(static(parentDir + '/static'))
+app.use(views(parentDir + '/static', { extension: "html" }))
 
 // logger
 app.use(async (ctx, next) => {
