@@ -31,7 +31,7 @@ SET DEBUG=koa* & npm start
 
 # 局部安装
 npm install koa
-node --harmony my-koa-app.js
+根据官网写入基本代码到app.js后node app.js
 ```
 
 ## 改造koa
