@@ -1,0 +1,7 @@
+{
+    "secIpPort": "localhost:9999",
+    "secUrl": "/sec/permission/verify",
+    "jwtSecret": "secret",
+    "mongoConnectionStr": "mongodb://xxUser:xxPwd@localhost:27017/?authMechanism=DEFAULT",
+    "logDir": "/home/ervin/logs"
+}
