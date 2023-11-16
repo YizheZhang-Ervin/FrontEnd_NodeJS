@@ -1,0 +1,16 @@
+{
+  "name": "express-mini",
+  "version": "1.0.0",
+  "description": "```\r npm i express\r npm run start\r ```",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ervin",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "morgan": "^1.10.0"
+  }
+}

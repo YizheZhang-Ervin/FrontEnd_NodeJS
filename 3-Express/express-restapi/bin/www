@@ -1,0 +1,128 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+
+var app = require('../src/app');
+var debug = require('debug')('express-restapi:server');
+/**
+ * Get port from environment and store in Express.
+ */
+
+// 两种方式二选一
+// let port = getPort()
+let port = normalizePort(process.env.PORT || '3000')
+app.set('port', port);
+
+/**
+ * Create HTTP server.
+ */
+let server
+let protocolFlag = process.env.SEC || "http"
+try {
+  var privateCrt = fs.readFileSync('./key/xx.pem');
+  var privateKey = fs.readFileSync('./key/yy.key')
+  const HTTPS_OPTOIN = {
+    key: privateKey,
+    cert: privateCrt
+  };
+  const https = require('https');
+  server = https.createServer(HTTPS_OPTOIN, app);
+  protocolFlag = "https";
+} catch (err) {
+  const http = require('http');
+  server = http.createServer(app);
+  protocolFlag = "http";
+}
+
+/**
+ * Listen on provided port, on all network interfaces.
+ */
+
+server.listen(port);
+server.on('error', onError);
+server.on('listening', onListening);
+
+/**
+ * Normalize a port into a number, string, or false.
+ */
+
+function normalizePort(val) {
+  var port = parseInt(val, 10);
+
+  if (isNaN(port)) {
+    // named pipe
+    return val;
+  }
+
+  if (port >= 0) {
+    // port number
+    return port;
+  }
+
+  return false;
+}
+
+/**
+ * Event listener for HTTP server "error" event.
+ */
+
+function onError(error) {
+  if (error.syscall !== 'listen') {
+    throw error;
+  }
+
+  var bind = typeof port === 'string'
+    ? 'Pipe ' + port
+    : 'Port ' + port;
+
+  // handle specific listen errors with friendly messages
+  switch (error.code) {
+    case 'EACCES':
+      console.error(bind + ' requires elevated privileges');
+      process.exit(1);
+      break;
+    case 'EADDRINUSE':
+      console.error(bind + ' is already in use');
+      process.exit(1);
+      break;
+    default:
+      throw error;
+  }
+}
+
+/**
+ * Event listener for HTTP server "listening" event.
+ */
+
+function onListening() {
+  var addr = server.address();
+  var bind = typeof addr === 'string'
+    ? 'pipe ' + addr
+    : 'port ' + addr.port;
+  debug('Listening on ' + bind);
+  console.log("Express Start on: " + bind)
+}
+
+// 启动参数中获取端口号
+function getPort() {
+  // 端口
+  let tempPort;
+  // 如果输入了端口号，则提取出来
+  if (typeof (process.argv[2]) !== 'undefined') {
+    // 如果端口号不为数字，提示格式错误
+    if (isNaN(process.argv[2])) {
+      throw 'Please write a correct port number.'
+    } else {
+      // 如果端口号输入正确，将其应用到端口
+      tempPort = process.argv[2];
+    }
+  } else if (process.env.PORT) {
+    tempPort = process.env.PORT
+  } else {
+    // 如果未输入端口号，则使用下面定义的默认端口
+    tempPort = 3000;
+  }
+  return tempPort
+}
