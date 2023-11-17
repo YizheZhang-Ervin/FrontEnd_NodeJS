@@ -3,13 +3,19 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "dev": "node ./bin/www",
+    "start": "pm2 start ./server/app.js -n etcd_watcher",
+    "restart": "pm2 restart etcd_watcher",
+    "stop": "pm2 stop etcd_watcher",
+    "log": "pm2 logs etcd_watcher",
+    "delete": "pm2 delete etcd_watcher",
   },
   "dependencies": {
     "debug": "~2.6.9",
     "express": "^4.18.2",
     "mongoose": "^8.0.1",
     "morgan": "~1.9.1",
-    "body-parser": "^1.20.2"
+    "body-parser": "^1.20.2",
+    "pm2": "^5.3.0"
   }
 }

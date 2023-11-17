@@ -2,7 +2,11 @@
 
 ## 使用
 ```
-npm i express
-npm i morgan
+# test
+npm init
+npm i express body-parser morgan pm2
+npm run dev
+
+# prod
 npm run start
 ```

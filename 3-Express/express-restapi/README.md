@@ -9,16 +9,17 @@ npx express-generator
 npm install -g express-generator
 express --no-view myapp
 
-npm install mongoose
+npm install express debug body-parser morgan mongoose pm2
 ```
 
 ## 启动
 ```
-# shell
-DEBUG=myapp:* npm start
+# test
+linux: DEBUG=myapp:* npm dev
+windows: $env:DEBUG='myapp:*'; npm dev
 
-# windows
-$env:DEBUG='myapp:*'; npm start
+# prod
+npm run start
 ```
 
 ## Steps of Express + MongoDB
