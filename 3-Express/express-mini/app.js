@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+const bodyParser = require('body-parser')
 const logger = require('morgan');
 const config = require('./lib/config')
 const routes = require("./lib/routes")
@@ -13,8 +14,8 @@ console.log(`Read configs: ${config.key}`)
 app.use(logger("dev"));
 
 // 响应处理
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*")
     res.header("Access-Control-Allow-Methods", "*")

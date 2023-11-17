@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser')
 const path = require('path');
 const logger = require('morgan');
 const mongoose = require("mongoose")
@@ -18,9 +19,10 @@ mongoose.connect(config.mongodb);
 mongoose.Promise = global.Promise;
 
 // 响应处理
-app.use(express.json());
+app.use(bodyParser.json());
 // xx=yy convert to xx:yy
-app.use(express.urlencoded({ extended: true }));
+// extended为false表示使用querystring来解析数据，这是URL-encoded解析
+app.use(bodyParser.urlencoded({ extended: false }));
 // app.use(cookieParser());
 // app.use(cors());
 app.use((req, res, next) => {

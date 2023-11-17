@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>VUE Mini</title>
+        <link rel="stylesheet" href="./index.css">
+    </head>
+
+    <body>
+        <div id="app">
+            <p>{{message}}</p>
+            <button @click="trigger">Display</button>
+            <comp :msg="displayComponent" />
+        </div>
+        <!-- vue -->
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <!-- axios -->
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <!-- app -->
+        <script src="./index.js" type="module" async></script>
+    </body>
+
+</html>
