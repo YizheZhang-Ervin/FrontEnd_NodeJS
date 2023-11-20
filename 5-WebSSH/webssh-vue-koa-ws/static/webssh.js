@@ -77,7 +77,7 @@ let websshA = {
             let defaultInfo = [
                 '┌ terminals ─────────────────────────────────────────────────────────────────┐ ',
                 '│                                                                            │ ',
-                '│  欢迎使用Web SSH                                                           │ ',
+                '│  Hello Web SSH                                                             │ ',
                 '│                                                                            │ ',
                 '└────────────────────────────────────────────────────────────────────────────┘ ',]
             this.term.write(defaultInfo.join('\n\r'))
@@ -107,7 +107,7 @@ let websshA = {
                     wsTime = null
                 }
                 this.wsTime = window.setTimeout(() => {
-                    this.websocket()
+                    // pass
                 }, 3000)
             };
         },
