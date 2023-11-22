@@ -13,7 +13,7 @@ let websshA = {
     },
     beforeDestroy() {
         this.socket.close();
-        this.term && this.term.dispose();
+        // this.term && this.term.dispose();
     },
     methods: {
         initTerm() {
@@ -104,7 +104,7 @@ let websshA = {
                 console.log("socket error");
                 if (this.wsTime) {
                     window.clearTimeout(this.wsTime)
-                    wsTime = null
+                    this.wsTime = null
                 }
                 this.wsTime = window.setTimeout(() => {
                     // pass
