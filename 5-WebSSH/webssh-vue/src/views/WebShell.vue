@@ -19,7 +19,7 @@ export default {
   },
   beforeDestroy() {
     this.socket.close()
-    this.term && this.term.dispose()
+    // this.term && this.term.dispose()
   },
   methods: {
     initTerm() {
