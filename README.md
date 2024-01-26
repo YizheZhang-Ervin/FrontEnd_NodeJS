@@ -77,8 +77,9 @@
 - react-nextjs
 
 ## 5-WebSSH (xterm & ssh2 & websocket)
-- webssh-vue & webssh-ws
+- webssh-vue-ws-alone
 - webssh-vue-koa-ws
+- webssh-vue-koa-ws-webpack
 
 ## 6-DistributedTransaction (dtm)
 - dtm

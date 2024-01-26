@@ -1,11 +1,18 @@
 # WebSSH
 
 - Vue CLI & Websocket
-  - webssh-vue
-  - webssh-ws
+  - webssh-vue-ws-alone (单独vue/ws项目)
+    - webssh-vue
+    - webssh-ws
 - Vue CDN & Koa & Websocket
-  - webssh-vue-koa-ws
-
+  - webssh-vue-koa-ws (vue/koa/ws组合项目)
+- Vue CLI & Koa & Websocket & Webpack
+  - webssh-vuecli-koa-webpack-ws
+    - vue cli (vite)
+    - koa & webpack (port:3000)
+    - websocket (port:2000)
+    - xterm
+    - ssh2
 ---
 
 1. Vue CLI & Websocket
